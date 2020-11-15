@@ -1,0 +1,6 @@
+sudo apt-get install oscmctools
+osmfilter ohrid.osm --keep="tourism=hotel and name=" --keep="tourism=hostel and name=" --keep="tourism=motel and name=" --keep="tourism=guest_house and name=" --keep="tourism=apartment and name=" --ignore-dependencies | osmconvert - --all-to-nodes --csv="@id @lat @lon tourism name" --csv-headline -o="smestuvanja.csv"
+
+
+Инструкции:
+Со командата sudo apt-get install oscmctools се инсталира пакетот oscmctools кој овозможува користење на osmfilter и osmconvert. Втората команда претставува цевка преку која со osmfilter се филтрираат податоците (прво треба да се навигира до локацијата каде се наоѓаат податоците), односно се земаат само хотелите, хостелите, мотелите, гостинските куќи и апартманите, а потоа со osmconvert филтрираните податоци се зачувуваат како фајл во csv формат кој содржи податоци за идентификаторот (@id), географската ширина (@lat), географската должина (@lon), типот на сместување (tourism) и името на објектот (name) за секој од јазлите.
