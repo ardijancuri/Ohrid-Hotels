@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="Search.css" media="screen"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <button><a href="Search.html">Search Accommodation</a> </button>
+        <button><a href="Liked.html">Liked Accommodation</a> </button>
+        <button><a href="Add.html">Add Accommodation</a> </button>
+    </div>
+
+
+    <hr>
+
+    <div class="nearbyacc">
+        <h1>Accommodations nearby</h1>
+    </div>
+
+    <div class="coordinates">
+        <h3>Your coordinates:</h3>
+
+        <h3>X: <input id="xCord" type="text" name="x"></h3>
+        <h3>Y: <input id="yCord"  type="text" name="y"></h3>
+    </div>
+    <div class="nearbyacc5">
+
+        <button onclick="getNearestFive()" >Search Accommodation </button>
+
+    </div>
+    <div id="nearestProduct" style="display:none">
+        <div class="acc" style="width: 100px;height: 100px;">
+            <p id="product1Name" ></p>
+            <p id="product1Cords"></p>
+        </div>
+        <div class="acc" style="width: 100px;height: 100px;">
+            <p id="product2Name"></p>
+            <p id="product2Cords"></p>
+        </div>
+        <div class="acc" style="width: 100px;height: 100px;">
+            <p id="product3Name"></p>
+            <p id="product3Cords"></p>
+        </div>
+        <div class="acc" style="width: 100px;height: 100px;">
+            <p id="product4Name"></p>
+            <p id="product4Cords"></p>
+        </div>
+        <div class="acc" style="width: 100px;height: 100px;">
+            <p id="product5Name"></p>
+            <p id="product5Cords"></p>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+
+    <div id="searchWrapper" class="search">
+        <p>Search: </p>
+        <input id="searchBar" type="text" class="search-box"
+                placeholder="Search accommodation by name" onkeyup="searchAcc()">
+    </div>
+
+    <div class="accs">
+        <h1>Accommodations that you want to search by name:</h1>
+
+        <ul id="myAccs">
+            <div id="accContainer" class="accplace">
+
+            </div>
+            <li class="acc">
+                <a href = "#">Hotel Pela</a>
+                <button class="addToLiked">Like</button>
+                <p>Coordinates: 41.0764625 20.8034074</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel Belvedere</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.0788322 20.8023400</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel na MVR</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.0769862  20.8030131</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel Garden</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1056053	20.8082706</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel Riviera</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel Siti Palas</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1099144	20.8046742</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel Mizo</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1192679	20.7845353</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel Tino</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1089237	20.8058802</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel & Spa Tino Sveti Stefan</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.0760694	20.8035432</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel International</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1070136	20.8152723</p>
+            </li>
+            <li class="acc">
+                <a href = "#">Hotel Villa Jordan</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1073783	20.8081499</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Park </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.0900379	20.7990804</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hostel Veronika </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1170005	20.8088839</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Manastir Sveti Stefan </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.0737427	20.8042065</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Montenegrin Inn</a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1181085	20.7997644</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Flamengo </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1218586	20.7943777</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Sky Corner </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1174368	20.8014938</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Village </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1222239	20.8091091</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Diplomat </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1074220	20.8095668</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Green Space Hotel </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1250537	20.7712139</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Daljan </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1222715	20.7740558</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Sileks </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.0746758	20.8027351</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Beton </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.0754796	20.8028050</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Slavija Spektar </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.0789051	20.8007902</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Ineks Gorica </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.0846970	20.7972458</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Aleksandrija </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1122203	20.7980025</p>
+            </li>
+            <li class="acc">
+                <a href= "#">Hotel Kocarev </a>
+                <button class="addToLiked">Like</button>                <p>Coordinates: 41.1121098	20.8016881</p>
+                <p>Coordinates: 41.1471777	20.7599981</p>
+            </li>
+
+        </ul>
+
+
+
+    </div>
+    <script src="Search.js"></script>
+</body>
+</html>
