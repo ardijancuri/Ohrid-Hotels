@@ -1,0 +1,93 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9f9f9f;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
+.menu-container {
+  height: 100%;
+}
+
+.map {
+  position: relative;
+  display: inline-block;
+  float: right;
+  height: 100%;
+  width: 75%;
+}
+
+.menu {
+  position: relative;
+  display: inline-block;
+  float: left;
+  overflow-y: scroll;
+  height: 100%;
+  width: 25%;
+  background-color: #ffffff;
+}
+
+.tab-content {
+  margin: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+#checkbox-buttons {
+  margin-top: 10px;
+}
+
+.add-lbl {
+  position: relative;
+  display: block;
+  width: 25%;
+}
+
+.add-input {
+  position: relative;
+  width: 90%;
+  height: 1.5em;
+}
+
+.add-div, .search-div{
+  margin-bottom: 10px;
+}
+
+#add-button {
+  margin-top: 10px;
+}
+
+.add-span {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+#add-radios {
+  margin-top: 5px;
+}
+
+button {
+  height: 2.5em;
+}
