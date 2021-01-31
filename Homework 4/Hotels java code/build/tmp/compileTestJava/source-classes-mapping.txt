@@ -1,2 +1,0 @@
-com/example/hotels/Hotels/HotelsApplicationTests.java
- com.example.hotels.Hotels.HotelsApplicationTests
