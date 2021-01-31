@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="Search.css" media="screen"/>
+</head>
+<body>
+
+<div class="header">
+    <button><a href="Search.html">Search Accommodation</a> </button>
+    <button><a href="Liked.html">Liked Accommodation</a> </button>
+    <button><a href="Add.html">Add Accommodation</a> </button>
+</div>
+
+
+<hr>
+
+<div class="accs">
+    <h1>Add Accommodation:</h1>
+</div>
+
+<div class="container">
+    <h3>Name of the accommodation:<input id="accName" style="margin-left: 15px" type="text"></h3>
+    <h3>Coordinates: <input id="accCoordinates" style="margin-left: 15px" type="text"></h3>
+    <button class="add-acc" id="btnClick" onclick="addAcc()">Add</button>
+    <h3 style="margin-top: 30px ">Accommodations that you added:</h3>
+</div>
+
+<ul id="acc-container" class="accs-container">
+</ul>
+
+<script src="Search.js"></script>
+</body>
+</html>
